@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('https://img.freepik.com/premium-vector/vector-background-concept-technology_49459-44.jpg') 
+                no-repeat center center/cover;
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Dark Overlay to Improve Readability */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8); /* Dark overlay */
+    z-index: 0;
+}
+
+/* Main Container */
+.container {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: white;
+    padding: 20px;
+}
+
+/* Heading */
+h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #FFFFFF;
+    text-shadow: -2px -2px 4px #000, 2px 2px 4px #000; /* Black outline */
+}
+
+/* Subheadings (Source & Destination) */
+label {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #f0f0f0;
+    text-shadow: 1px 1px 5px rgba(255, 255, 255, 0.3);
+}
+
+/* Glassmorphism Effect */
+.glass-box {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(15px);
+    padding: 20px;
+    border-radius: 10px;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    box-shadow: 0 8px 32px rgba(255, 255, 255, 0.1);
+}
+
+/* Dropdown Styling */
+select {
+    padding: 12px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 8px;
+    outline: none;
+    backdrop-filter: blur(5px);
+    transition: 0.3s ease-in-out;
+    width: 100%;
+    max-width: 250px;
+    text-align: center;
+}
+
+select:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Button Container */
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    position: relative;
+    z-index: 3;
+}
+
+/* Button Styling */
+button {
+    background-color: #ff6600;
+    color: white;
+    font-weight: bold;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(255, 102, 0, 0.8);
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: 0.3s ease-in-out;
+    z-index: 5;
+    position: relative;
+}
+
+button:hover {
+    background-color: #cc5500;
+    box-shadow: 0 0 15px rgba(255, 102, 0, 1);
+}
+
+/* Airplane Animation */
+.airplane-animation {
+    position: absolute;
+    top: 20%;
+    left: -200px;
+    width: 200px;
+    height: auto;
+    animation: fly 10s linear infinite;
+}
+
+@keyframes fly {
+    0% { left: -200px; }
+    100% { left: 100vw; }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .glass-box {
+        width: 80%;
+    }
+    
+    h1 {
+        font-size: 2.5rem;
+    }
+    
+    select {
+        max-width: 200px;
+    }
+
+    button {
+        font-size: 1rem;
+        padding: 10px 20px;
+    }
+}
