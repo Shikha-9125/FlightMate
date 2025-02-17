@@ -139,13 +139,14 @@ const Home = () => {
       alert("Please select both source and destination");
       return;
     }
-
-    // Play notification sound
-    const audio = new Audio("/assets/alert.mp3");
+  
+    // Play notification sound when the modal opens
+    const audio = new Audio("/alert.mp3"); // Ensure it's in the public folder
     audio.play().catch((err) => console.error("Error playing sound:", err));
-
+  
     setIsOpen(true);
   };
+  
 
   const handleSelectCriteria = (selectedCriteria) => {
     setCriteria(selectedCriteria);
@@ -209,15 +210,18 @@ const Home = () => {
       </div>
 
       {/* Popup Modal */}
-      <Modal isOpen={isOpen} onRequestClose={() => setIsOpen(false)} className="modal">
-        <h2>Select Optimization Criteria</h2>
-        <button onClick={() => handleSelectCriteria("cost")}>💰 Cheapest</button>
-        <button onClick={() => handleSelectCriteria("distance")}>📏 Shortest Distance</button>
-        <button onClick={() => handleSelectCriteria("time")}>⏳ Fastest</button>
-      </Modal>
+      <Modal 
+  isOpen={isOpen} 
+  onRequestClose={() => setIsOpen(false)} 
+  className={`modal ${isOpen ? "modal-enter-active" : "modal-enter"}`} 
+>
+  <h2>Select Optimization Criteria</h2>
+  <button onClick={() => handleSelectCriteria("cost")}>💰 Cheapest</button>
+  <button onClick={() => handleSelectCriteria("distance")}>📏 Shortest Distance</button>
+  <button onClick={() => handleSelectCriteria("time")}>⏳ Fastest</button>
+</Modal>
+
     </div>
   );
 };
-return the changes ;
-gtdghdtrxh;
 export default Home;
