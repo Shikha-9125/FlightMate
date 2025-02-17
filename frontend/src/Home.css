@@ -4,7 +4,7 @@ body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
-    background: url('https://img.freepik.com/premium-vector/vector-background-concept-technology_49459-44.jpg') 
+    background: url('https://www.shutterstock.com/image-vector/travel-all-over-world-map-600nw-2443795817.jpg') 
                 no-repeat center center/cover;
     position: relative;
     height: 100vh;
@@ -21,12 +21,12 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.8); /* Dark overlay */
+    background: rgba(0, 0, 0, 0.6); /* Dark overlay */
     z-index: 0;
 }
 
 /* Main Container */
-.container {
+container {
     position: relative;
     z-index: 2;
     text-align: center;
@@ -44,6 +44,12 @@ h1 {
 }
 
 /* Subheadings (Source & Destination) */
+.input-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
 label {
     font-size: 1.2rem;
     font-weight: 500;
@@ -69,12 +75,12 @@ select {
     padding: 12px;
     font-size: 16px;
     font-weight: 500;
-    color: #ffffff;
-    background-color: rgba(255, 255, 255, 0.2);
+    color: black;
+    background-color:white;
     border: 1px solid rgba(255, 255, 255, 0.5);
     border-radius: 8px;
     outline: none;
-    backdrop-filter: blur(5px);
+    /* backdrop-filter: blur(5px); */
     transition: 0.3s ease-in-out;
     width: 100%;
     max-width: 250px;
@@ -95,24 +101,51 @@ select:hover {
 }
 
 /* Button Styling */
-button {
+find-route-button {
     background-color: #ff6600;
     color: white;
     font-weight: bold;
     padding: 12px 24px;
     border: none;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(255, 102, 0, 0.8);
     cursor: pointer;
     font-size: 1.2rem;
     transition: 0.3s ease-in-out;
-    z-index: 5;
-    position: relative;
 }
 
-button:hover {
+.find-route-button:hover {
     background-color: #cc5500;
-    box-shadow: 0 0 15px rgba(255, 102, 0, 1);
+}
+
+/* Modal */
+.modal {
+    background: rgba(0, 0, 0, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+    width: 300px;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.modal button {
+    display: block;
+    margin: 10px auto;
+    background-color: #ff6600;
+    border: none;
+    padding: 10px;
+    color: white;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.modal button:hover {
+    background-color: #cc5500;
 }
 
 /* Airplane Animation */
