@@ -153,7 +153,6 @@ li {
 
 
 /* Ensures the results page completely covers everything */
-
 .results-page {
   background: url('/image.png') no-repeat center center/cover;
   color: white;
