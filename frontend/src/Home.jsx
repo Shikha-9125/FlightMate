@@ -22,7 +22,7 @@ const Home = () => {
   useEffect(() => {
     const fetchAirports = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/api/airports");
+        const response = await axios.get("https://flightmate-hn8i.onrender.com/api/airports");
         if (response.data.length > 0) {
           setAirports(response.data);
         } else {
@@ -53,7 +53,7 @@ const Home = () => {
     setError("");
   
     try {
-      const response = await axios.post("http://localhost:5000/api/find-route", {
+      const response = await axios.post("https://flightmate-hn8i.onrender.com/api/airports", {
         source,
         destination,
         criteria,
