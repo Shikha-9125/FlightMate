@@ -11,13 +11,15 @@ dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 5000;
-
+app.use(express.json());
 //const cors = require("cors");
 app.use(cors({
-  origin: ["http://localhost:5000", "https://flight-mate.vercel.app"],  // Allow both local and deployed frontend
+  origin: [ "http://localhost:5173", "https://flight-mate.vercel.app"],  // Add Vite's origin
   methods: "GET,POST,PUT,DELETE",
   credentials: true
 }));
+
+//app.use(cors({ origin: "*", credentials: true }));
 
 
 

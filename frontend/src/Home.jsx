@@ -163,7 +163,10 @@ const Home = () => {
   useEffect(() => {
     const fetchAirports = async () => {
       try {
-        const API_URL = import.meta.env.VITE_API_URL; // ✅ Correct way for Vite
+        const API_URL =
+  import.meta.env.MODE === "production"
+    ? import.meta.env.VITE_API_URL_PROD
+    : import.meta.env.VITE_API_URL_LOCAL;
         if (!API_URL) throw new Error("API URL is missing in .env");
 
         console.log("Fetching data from:", API_URL);
@@ -190,13 +193,16 @@ const Home = () => {
     setError("");
 
     try {
-      const API_URL = import.meta.env.VITE_API_URL; // ✅ Correct way for Vite
+      const API_URL =
+  import.meta.env.MODE === "production"
+    ? import.meta.env.VITE_API_URL_PROD
+    : import.meta.env.VITE_API_URL_LOCAL;
       if (!API_URL) throw new Error("API URL is missing in .env");
 
       const response = await axios.post(
         `${API_URL}/api/find-route`, // ✅ Use Vite variable
         { source, destination, criteria },
-        { headers: { "Content-Type": "application/json" } }
+        { headers: { "Content-Type": "application/json" },withCredentials: true }
       );
 
       console.log("API Response:", response.data);
