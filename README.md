@@ -108,7 +108,13 @@ Fetches all available airports from the database.
 - ✅ Time-Based Optimization ⏳
 
         1-Consider layovers and direct flight durations.
-        2-Optimize routes to find the fastest travel time rather than just distance. 
+        2-Optimize routes to find the fastest travel time rather than just distance.
+
+  ## Deployment
+The project is deployed and accessible at:
+
+🔗 [Live Demo](https://flight-mate.vercel.app/)
+
 
 
 Feel free to open issues and contribute! 🚀
