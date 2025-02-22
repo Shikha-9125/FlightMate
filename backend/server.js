@@ -12,7 +12,7 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-const cors = require("cors");
+//const cors = require("cors");
 app.use(cors({
     origin: "https://flight-mate.vercel.app",  // Allow frontend access
     methods: "GET,POST,PUT,DELETE",
