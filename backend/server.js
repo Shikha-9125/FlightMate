@@ -14,10 +14,11 @@ const PORT = process.env.PORT || 5000;
 
 //const cors = require("cors");
 app.use(cors({
-    origin: "https://flight-mate.vercel.app",  // Allow frontend access
-    methods: "GET,POST,PUT,DELETE",
-    credentials: true
+  origin: ["http://localhost:5000", "https://flight-mate.vercel.app"],  // Allow both local and deployed frontend
+  methods: "GET,POST,PUT,DELETE",
+  credentials: true
 }));
+
 
 
 // MongoDB Atlas Connection
