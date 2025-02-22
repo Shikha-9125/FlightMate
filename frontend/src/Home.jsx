@@ -194,7 +194,7 @@ const Home = () => {
       if (!API_URL) throw new Error("API URL is missing in .env");
 
       const response = await axios.post(
-        `${API_URL}/api/routes`, // ✅ Use Vite variable
+        `${API_URL}/api/find-route`, // ✅ Use Vite variable
         { source, destination, criteria },
         { headers: { "Content-Type": "application/json" } }
       );
